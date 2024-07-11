@@ -1,0 +1,15 @@
+services:
+  discord_superchat:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        BUN_VERSION: 1.1.18
+        NODE_VERSION: 20.14.0
+    volumes:
+      - node_modules:/home/bun/app/node_modules
+      - ../:/home/bun/app:cached
+    tty: true
+    stdin_open: true
+volumes:
+  node_modules:

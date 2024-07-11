@@ -46,6 +46,7 @@ const app = new Hono<{ Bindings: Bindings }>()
       );
 
       if (!isValid) {
+        console.error("Unauthorized")
         return c.json({ status: 401, message: "Unauthorized" }, 401);
       }
 
